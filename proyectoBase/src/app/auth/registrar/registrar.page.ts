@@ -1,11 +1,15 @@
 
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegistrarService } from './registrar.service';
 import { Usuario } from 'src/app/model/usuario';
 import { ModalController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+=======
+import {FormBuilder , FormGroup , Validators} from '@angular/forms';
+>>>>>>> ba67054aa114e8ad4e647379d009e1023e4be870
 
 @Component({
   selector: 'app-registrar',
@@ -29,6 +33,7 @@ export class RegistrarPage implements OnInit {
                 });
  }
 
+<<<<<<< HEAD
   ngOnInit() {}
 
   get f() { return this.registrarForm.controls; }
@@ -81,4 +86,25 @@ export class RegistrarPage implements OnInit {
 
     await alert.present();
   }
+=======
+registrarForm:FormGroup;
+  constructor(private formbuilder: FormBuilder) { 
+    this.registrarForm=this.formbuilder.group({
+      nombre: ['', Validators.required],
+      correo: ['', [Validators.required, Validators.email]],
+      contrasena:['',[Validators.required, Validators.minLength(6)]],
+      confirmarcontrasena: ['', Validators.required]
+
+  });
+}
+  
+  ngOnInit() {}
+  get f(){ return this.registrarForm.controls; }
+
+
+registrar(){
+  console.log(this.registrarForm.valid);
+}
+
+>>>>>>> ba67054aa114e8ad4e647379d009e1023e4be870
 }
