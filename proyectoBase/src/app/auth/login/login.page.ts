@@ -21,7 +21,6 @@ export class LoginPage implements OnInit {
               private alertController: AlertController,
               private router: Router) {
 
-
               this.loginForm = this.formBuilder.group({
                 correo: ['', [Validators.required, Validators.email]],
                 contrasena: ['', [Validators.required, Validators.minLength(6)]]
